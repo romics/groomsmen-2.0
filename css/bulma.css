@@ -7162,3 +7162,9 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.css.map */
+
+/*********************** CUSTOM CSS ***********************/
+
+#slider {
+  background-image: url(http://bulma.io/images/placeholders/640x360.png);
+}
