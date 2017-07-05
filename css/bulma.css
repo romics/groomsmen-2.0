@@ -7174,10 +7174,23 @@ label.panel-block:hover {
   background-size: cover;
 }
 
+#team .column {
+  margin-bottom: 30px;
+}
+
 #team .member-name {
   font-size: 16px;
+  margin-bottom: 5px;
 }
 
 #team .member-role {
   font-size: 11px;
+}
+
+#team .image img {
+  border-radius: 50%;
+}
+
+#team figure {
+  margin-bottom: 10px;
 }
