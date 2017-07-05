@@ -7173,3 +7173,11 @@ label.panel-block:hover {
   background-image: url("../images/engagement-photo-1.jpg");
   background-size: cover;
 }
+
+#team .member-name {
+  font-size: 16px;
+}
+
+#team .member-role {
+  font-size: 11px;
+}
