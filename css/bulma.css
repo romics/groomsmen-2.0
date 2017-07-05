@@ -7165,6 +7165,11 @@ label.panel-block:hover {
 
 /*********************** CUSTOM CSS ***********************/
 
-#slider {
+/* #slider {
   background-image: url(http://bulma.io/images/placeholders/640x360.png);
+} */
+
+#slider {
+  background-image: url("../images/engagement-photo-1.jpg");
+  background-size: cover;
 }
