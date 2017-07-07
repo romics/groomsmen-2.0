@@ -7172,6 +7172,15 @@ label.panel-block:hover {
 #slider {
   background-image: url("../images/engagement-photo-1.jpg");
   background-size: cover;
+
+}
+
+#about, #team, #details {
+  padding: 30px 0px 30px 0px;
+}
+
+#about, #details {
+  background-color: #F0F0F0;
 }
 
 #team .column {
@@ -7180,11 +7189,11 @@ label.panel-block:hover {
 
 #team .member-name {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 #team .member-role {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 #team .image img {
@@ -7193,4 +7202,35 @@ label.panel-block:hover {
 
 #team figure {
   margin-bottom: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-overlay {
+
+  /* recommendation:
+     don't focus on the number "1000" here, but rather,
+     you should have a documented system for z-index and 
+     follow that system. This number should be pretty
+     high on the scale in that system.
+  */
+  z-index: 1000;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.modal.closed {
+ 
+  display: none;
+
 }
