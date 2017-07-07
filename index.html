@@ -32,6 +32,12 @@
             modal.classList.toggle("closed");
             modalOverlay.classList.toggle("closed");
           });
+
+          // Reset Forms 
+          $(".reset").click(function() {
+          $(this).closest('form').find("input[type=text], textarea").val("");
+          });
+
           });
      </script>
 </head>
@@ -128,7 +134,7 @@
 <section id="about">
 <div class="container">
 <h1 class="title is-1">About</h1>
-<p>Lorem ipsum dolor sit amet id. Mus eu felis. Cras a amet. Rutrum sollicitudin libero. Nec bibendum aenean aenean risus in ullamcorper massa nec elit vivamus arcu fringilla sed accumsan.</p>
+<p>Lorem ipsum dolor sit amet id. Mus eu felis. Cras a amet. Rutrum sollicitudin libero. Nec bibendum aenean aenean risus in ullamcorper massa nec elit vivamus arcu fringilla sed accumsan. You will need to be at Gordonsville, VA on Saturday, September 9th.</p>
 <a class="button is-primary is-large open-modal" id="open-modal">Accept</a>
 </div>
 </section>
@@ -217,7 +223,7 @@
 <!--      D E T A I L S     -->
 <section id="details">
 <div class="container">
-<h1 class="title is-1">Details</h1>
+<h1 class="title is-1">Wedding</h1>
 <p>Date: Sunday, September 10, 2017</p>
 <p>Time: Morning</p>
 <p>Attire: TBA</p>
@@ -242,6 +248,7 @@
     <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
     <h1 class="title">Yay!</h1>
     <p>Now that you have accepted, I will need some contact information from you...</p>
+    <form>
     <div class="field">
       <p class="control has-icons-left">
       <input class="input" type="text" placeholder="Full Name">
@@ -272,6 +279,7 @@
         <button class="button is-warning">Reset</button>
       </p>
     </div>
+    </form>
   </div>
 </div> 
 
