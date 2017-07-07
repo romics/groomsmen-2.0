@@ -17,8 +17,22 @@
 
      <script type="text/javascript">
         $(function(){
-            // Do stuff.
-        });
+
+          var modal = document.querySelector("#modal");
+          var modalOverlay = document.querySelector("#modal-overlay");
+          var closeButton = document.querySelector("#close-button");
+          var openButton = document.querySelector("#open-modal");
+
+          closeButton.addEventListener("click", function() {
+            modal.classList.toggle("closed");
+            modalOverlay.classList.toggle("closed");
+          });
+
+          openButton.addEventListener("click", function() {
+            modal.classList.toggle("closed");
+            modalOverlay.classList.toggle("closed");
+          });
+          });
      </script>
 </head>
 
@@ -115,6 +129,7 @@
 <div class="container">
 <h1 class="title is-1">About</h1>
 <p>Lorem ipsum dolor sit amet id. Mus eu felis. Cras a amet. Rutrum sollicitudin libero. Nec bibendum aenean aenean risus in ullamcorper massa nec elit vivamus arcu fringilla sed accumsan.</p>
+<a class="button is-primary is-large open-modal" id="open-modal">Accept</a>
 </div>
 </section>
 
@@ -220,11 +235,46 @@
   </div>
 </footer>
 
+
+<div class="modal-overlay" id="modal-overlay"></div>
 <div class="modal" id="modal">
-  <!-- modal stuff -->
-</div>
-<div class="modal-overlay" id="modal-overlay">
-</div>
+  <div class="modal-inner">
+    <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
+    <h1 class="title">Yay!</h1>
+    <p>Now that you have accepted, I will need some contact information from you...</p>
+    <div class="field">
+      <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Full Name">
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Email Address">
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope-o"></i>
+      </span>
+    </div>
+    <div class="field">
+      <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Phone Number">
+      <span class="icon is-small is-left">
+        <i class="fa fa-mobile"></i>
+      </span>
+    </div>
+    <div class="field is-grouped">
+      <p class="control">
+        <button class="button is-primary">Submit</button>
+      </p>
+      <p class="control">
+        <button class="button is-warning">Reset</button>
+      </p>
+    </div>
+  </div>
+</div> 
+
 
 </body>
 
