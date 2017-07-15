@@ -21,7 +21,7 @@
           var modal = document.querySelector("#modal");
           var modalOverlay = document.querySelector("#modal-overlay");
           var closeButton = document.querySelector("#close-button");
-          var openButton = document.querySelector("#open-modal");
+          var openButton = document.querySelector("#key");
 
           closeButton.addEventListener("click", function() {
             modal.classList.toggle("closed");
@@ -54,6 +54,16 @@
               $('.success').fadeIn(1000);
             }
           })
+
+          // groomsmen
+          var groomsman1 = {firstName:"Quinton", email:"quinton4@vt.edu"};
+          var groomsman2 = {firstName:"Romcholo", email:"romcholo@vt.edu"};
+          var groomsman3 = {firstName:"Jordan", email:"jcr1593@vt.edu"};
+          var groomsman4 = {firstName:"Justin", email:"jryals22@vt.edu"};
+          var groomsman5 = {firstName:"Kenny", email:"quinton4@vt.edu"};
+          var groomsman6 = {firstName:"John", email:"robertson.john.t@gmail.com "};
+          var groomsman7 = {firstName:"Yi", email:"tenebrusethan@gmail.com"};
+          var groomsman8 = {firstName:"Klint", email:"cklint12@vt.edu"};
           });
      </script>
 </head>
@@ -258,7 +268,8 @@
 </footer>
 
 
-<div class="modal-overlay" id="modal-overlay"></div>
+<div class="modal-overlay" id="modal-overlay">
+</div>
 <div class="modal" id="modal">
   <div class="modal-inner">
     <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
@@ -280,6 +291,39 @@
         <i class="fa fa-envelope-o"></i>
       </span>
     </div>
+    <div class="field">
+      <p class="control has-icons-left">
+      <input class="input" id="phone" type="text" placeholder="Phone Number">
+      <span class="icon is-small is-left">
+        <i class="fa fa-mobile"></i>
+      </span>
+    </div>
+    <div class="field is-grouped">
+      <p class="control">
+        <button class="button is-primary">Submit</button>
+      </p>
+      <p class="control">
+        <button class="button is-warning">Reset</button>
+      </p>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="key">
+  <div class="modal-inner">
+    <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
+    <h1 class="title">Yay!</h1>
+    <p>Now that you have accepted, I will need some contact information from you...</p>
+    <form id="contact">
+    <div class="field">
+      <p class="control has-icons-left">
+      <input class="input" id="email" type="text" placeholder="Email Address">
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope-o"></i>
+      </span>
+    </div>
+    
     <div class="field">
       <p class="control has-icons-left">
       <input class="input" id="phone" type="text" placeholder="Phone Number">
