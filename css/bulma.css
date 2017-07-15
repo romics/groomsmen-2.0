@@ -7191,10 +7191,12 @@ label.panel-block:hover {
 #team .member-name {
   font-size: 16px;
   margin-bottom: 2px;
+  text-align: center;
 }
 
 #team .member-role {
   font-size: 12px;
+  text-align: center;
 }
 
 #team .image img {
@@ -7202,7 +7204,10 @@ label.panel-block:hover {
 }
 
 #team figure {
+  display: block;
+  margin: auto;
   margin-bottom: 10px;
+
 }
 
 .modal {
