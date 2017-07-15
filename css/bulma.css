@@ -7170,9 +7170,10 @@ label.panel-block:hover {
 } */
 
 #slider {
-  background-image: url("../images/engagement-photo-1.jpg");
+  background-image: url("../images/engagement-photo-1-resized.jpg");
+  min-height: 500px;
+  height: 100%;
   background-size: cover;
-
 }
 
 #about, #team, #details {
