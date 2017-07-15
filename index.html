@@ -18,19 +18,19 @@
         $(function(){
 
           // Modal Features
-          var modal = document.querySelector("#modal");
+          var modal = document.querySelector("#key");
           var modalOverlay = document.querySelector("#modal-overlay");
           var closeButton = document.querySelector("#close-button");
-          var openButton = document.querySelector("#key");
+          var openButton = document.querySelector("#modal-unlock");
 
           closeButton.addEventListener("click", function() {
-            modal.classList.toggle("closed");
-            modalOverlay.classList.toggle("closed");
+            modal.classList.toggle("modal");
+            modalOverlay.classList.toggle("modal-overlay");
           });
 
           openButton.addEventListener("click", function() {
-            modal.classList.toggle("closed");
-            modalOverlay.classList.toggle("closed");
+            modal.classList.add("modal-open");
+            modalOverlay.classList.add("modal-overlay-open");
           });
 
           // Reset Forms 
@@ -60,10 +60,18 @@
           var groomsman2 = {firstName:"Romcholo", email:"romcholo@vt.edu"};
           var groomsman3 = {firstName:"Jordan", email:"jcr1593@vt.edu"};
           var groomsman4 = {firstName:"Justin", email:"jryals22@vt.edu"};
-          var groomsman5 = {firstName:"Kenny", email:"quinton4@vt.edu"};
+          var groomsman5 = {firstName:"Kenny", email:"kennywimmer@gmail.com"};
           var groomsman6 = {firstName:"John", email:"robertson.john.t@gmail.com "};
           var groomsman7 = {firstName:"Yi", email:"tenebrusethan@gmail.com"};
           var groomsman8 = {firstName:"Klint", email:"cklint12@vt.edu"};
+
+          // Keys
+          var keys = [groomsman1.email, groomsman2.email, groomsman3.email, groomsman4.email, groomsman5.email, groomsman6.email, groomsman6.email, groomsman7.email, groomsman8.email];
+
+          // Key Validation
+          var inputKey = document.querySelector("#key")
+
+
           });
      </script>
 </head>
@@ -161,7 +169,7 @@
 <div class="container">
 <h1 class="title is-1">About</h1>
 <p>Lorem ipsum dolor sit amet id. Mus eu felis. Cras a amet. Rutrum sollicitudin libero. Nec bibendum aenean aenean risus in ullamcorper massa nec elit vivamus arcu fringilla sed accumsan. You will need to be at Gordonsville, VA on Saturday, September 9th.</p>
-<a class="button is-primary is-large open-modal" id="open-modal">Accept</a>
+<a class="button is-primary is-large open-modal" id="modal-unlock">Accept</a>
 </div>
 </section>
 
@@ -270,45 +278,6 @@
 
 <div class="modal-overlay" id="modal-overlay">
 </div>
-<div class="modal" id="modal">
-  <div class="modal-inner">
-    <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
-    <h1 class="title">Yay!</h1>
-    <p>Now that you have accepted, I will need some contact information from you...</p>
-    <form id="contact">
-    <div class="field">
-      <p class="control has-icons-left">
-      <input class="input" id="full-name" type="text" placeholder="Full Name">
-      <span class="icon is-small is-left">
-        <i class="fa fa-user"></i>
-      </span>
-      </p>
-    </div>
-    <div class="field">
-      <p class="control has-icons-left">
-      <input class="input" id="email" type="text" placeholder="Email Address">
-      <span class="icon is-small is-left">
-        <i class="fa fa-envelope-o"></i>
-      </span>
-    </div>
-    <div class="field">
-      <p class="control has-icons-left">
-      <input class="input" id="phone" type="text" placeholder="Phone Number">
-      <span class="icon is-small is-left">
-        <i class="fa fa-mobile"></i>
-      </span>
-    </div>
-    <div class="field is-grouped">
-      <p class="control">
-        <button class="button is-primary">Submit</button>
-      </p>
-      <p class="control">
-        <button class="button is-warning">Reset</button>
-      </p>
-    </div>
-    </form>
-  </div>
-</div>
 
 <div class="modal" id="key">
   <div class="modal-inner">
@@ -323,20 +292,13 @@
         <i class="fa fa-envelope-o"></i>
       </span>
     </div>
-    
-    <div class="field">
-      <p class="control has-icons-left">
-      <input class="input" id="phone" type="text" placeholder="Phone Number">
-      <span class="icon is-small is-left">
-        <i class="fa fa-mobile"></i>
-      </span>
-    </div>
+
     <div class="field is-grouped">
       <p class="control">
         <button class="button is-primary">Submit</button>
       </p>
       <p class="control">
-        <button class="button is-warning">Reset</button>
+        <button class="button is-warning" id="close-button">Cancel</button>
       </p>
     </div>
     </form>
