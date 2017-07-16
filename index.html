@@ -17,7 +17,7 @@
      <script type="text/javascript">
         $(function(){
 
-          // Modal Features
+          // Modal Functionality
           var modal = document.querySelector("#key");
           var modalOverlay = document.querySelector("#modal-overlay");
           var closeButton = document.querySelector("#close-button");
@@ -33,27 +33,44 @@
             modalOverlay.classList.add("modal-overlay-open");
           });
 
-          // Reset Forms 
+          // Reset Forms - Don't need this anymore...
           $(".reset").click(function() {
           $(this).closest('form').find("input[type=text], textarea").val("");
           });
 
           // Form Handling
-          $("#contact .button .is-primary")
-          var data = {
-            name: $("#full-name").val(),
-            email: $("#email").val(),
-            phone: $("#phone").val()
-          };
-
-          $.ajax({
-            type: "POST",
-            url: "emailHandler.php",
-            data: data,
-            success: function(){
-              $('.success').fadeIn(1000);
+          $("#squad-unlock .button .is-primary").click(function(event){
+            window.alert("hello");
+            var input = {
+            email: $("#email").val()
+            };
+            window.alert(input.email);
+            for (i = 0; i < keys.length; i++)
+            {
+              if (input.email == keys[i].email)
+              {
+                window.alert("It's a match!");
+              }
             }
-          })
+          });
+
+          $("#tryUnlock").click(function(event){
+            var input = {
+            email: $("#email").val()
+            };
+            for (i = 0; i < keys.length; i++)
+            {
+              if (input.email == keys[i].email)
+              {
+                return window.alert("It's a match!");
+              }
+              else if (i = keys.length)
+              {
+                return window.alert("No luck, try again.");
+              }
+            }
+          });
+
 
           // groomsmen
           var groomsman1 = {firstName:"Quinton", email:"quinton4@vt.edu"};
@@ -175,7 +192,7 @@
 <div class="container">
 <h1 class="title is-1">Squad</h1>
 <div class="columns is-multiline">
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman1">
   <figure class="image is-128x128">
   <img src="images/quinton-1.png">
   </figure>
@@ -281,7 +298,7 @@
     <span class="icon is-pulled-right" id="close-button"><i class="fa fa-times-circle"></i></span>
     <h1 class="title">Yay!</h1>
     <p>Now that you have accepted, I will need some contact information from you...</p>
-    <form id="contact">
+    <form id="squad-unlock">
     <div class="field">
       <p class="control has-icons-left">
       <input class="input" id="email" type="text" placeholder="Email Address">
@@ -289,10 +306,9 @@
         <i class="fa fa-envelope-o"></i>
       </span>
     </div>
-
     <div class="field is-grouped">
       <p class="control">
-        <button class="button is-primary">Submit</button>
+        <button class="button is-primary" id="tryUnlock">Submit</button>
       </p>
       <p class="control">
         <button class="button is-warning" id="close-button">Cancel</button>
