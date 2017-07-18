@@ -17,6 +17,29 @@
      <script type="text/javascript">
         $(function(){
 
+          // Groomsman Class
+          class Groomsman{
+            constructor(fname, lname){
+              addEmail(new_email){
+                this.email = new_email;
+                return this;
+              }
+            }
+          }
+
+          // groomsmen
+          var groomsman1 = {firstName:"Quinton", lastName:"Ivey", email:"quinton4@vt.edu"};
+          var groomsman2 = {firstName:"Romcholo", lastName:"Macatula",email:"romcholo@vt.edu"};
+          var groomsman3 = {firstName:"Jordan", lastName:"Riley",email:"jcr1593@vt.edu"};
+          var groomsman4 = {firstName:"Justin", lastName:"Ryals",email:"jryals22@vt.edu"};
+          var groomsman5 = {firstName:"Kenny", lastName:"Wimmer", email:"kennywimmer@gmail.com"};
+          var groomsman6 = {firstName:"John", lastName:"Robertson", email:"robertson.john.t@gmail.com "};
+          var groomsman7 = {firstName:"Yi", lastName:"Gao", email:"tenebrusethan@gmail.com"};
+          var groomsman8 = {firstName:"Klint", lastName:"Ciriaco", email:"cklint12@vt.edu"};
+
+          // Keys
+          var keys = [groomsman1.email, groomsman2.email, groomsman3.email, groomsman4.email, groomsman5.email, groomsman6.email, groomsman6.email, groomsman7.email, groomsman8.email];
+
           // Modal Functionality
           var modal = document.querySelector("#key");
           var modalOverlay = document.querySelector("#modal-overlay");
@@ -39,54 +62,33 @@
           });
 
           // Form Handling
-          $("#squad-unlock .button .is-primary").click(function(event){
-            window.alert("hello");
-            var input = {
-            email: $("#email").val()
-            };
-            window.alert(input.email);
-            for (i = 0; i < keys.length; i++)
-            {
-              if (input.email == keys[i].email)
-              {
-                window.alert("It's a match!");
-              }
-            }
-          });
-
           $("#tryUnlock").click(function(event){
+            
+            event.preventDefault();
             var input = {
             email: $("#email").val()
             };
-            for (i = 0; i < keys.length; i++)
+
+            input.email = input.email.toLowerCase();
+
+            if (keys.indexOf(input.email) === -1)
             {
-              if (input.email == keys[i].email)
-              {
-                return window.alert("It's a match!");
-              }
-              else if (i = keys.length)
-              {
-                return window.alert("No luck, try again.");
-              }
+              console.log("Try again");
+            }
+            else
+            {
+              var id = keys.indexOf(input.email)+1;
+              console.log("It's a match!!!");
+              modal.classList.toggle("modal-open");
+              modalOverlay.classList.toggle("modal-overlay-open");
+              console.log("#groomsman"+id);
+              var gman = "groomsman"+id;
+              console.log(gman);
+              $("#"+gman).find("img").attr("src", "images/placeholder-256x256.png");
+              console.log(("groomsman"+id).firstName);
+              $("#groomsman"+id).find("member-name").html(gman.firstName);
             }
           });
-
-
-          // groomsmen
-          var groomsman1 = {firstName:"Quinton", email:"quinton4@vt.edu"};
-          var groomsman2 = {firstName:"Romcholo", email:"romcholo@vt.edu"};
-          var groomsman3 = {firstName:"Jordan", email:"jcr1593@vt.edu"};
-          var groomsman4 = {firstName:"Justin", email:"jryals22@vt.edu"};
-          var groomsman5 = {firstName:"Kenny", email:"kennywimmer@gmail.com"};
-          var groomsman6 = {firstName:"John", email:"robertson.john.t@gmail.com "};
-          var groomsman7 = {firstName:"Yi", email:"tenebrusethan@gmail.com"};
-          var groomsman8 = {firstName:"Klint", email:"cklint12@vt.edu"};
-
-          // Keys
-          var keys = [groomsman1.email, groomsman2.email, groomsman3.email, groomsman4.email, groomsman5.email, groomsman6.email, groomsman6.email, groomsman7.email, groomsman8.email];
-
-          // Key Validation
-          var inputKey = document.querySelector("#key")
 
 
           });
@@ -197,11 +199,11 @@
   <img src="images/quinton-1.png">
   </figure>
   <div class="member-description is-centered">
-    <p class="member-name">Quinton Ivey</p>
-    <p class="member-role">Groomsman</p>
+    <p class="member-name"></p>
+    <p class="member-role pre">Groomsman</p>
   </div>
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman2">
   <figure class="image is-128x128">
   <img src="images/placeholder-256x256.png">
   </figure>
@@ -210,7 +212,7 @@
       <p class="member-role">Groomsman</p>
   </div>
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman3">
   <figure class="image is-128x128">
   <img src="images/jordan-1.png">
   </figure>
@@ -219,7 +221,7 @@
       <p class="member-role">Groomsman</p>
   </div>
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman4">
   <figure class="image is-128x128">
   <img src="http://bulma.io/images/placeholders/128x128.png">
   </figure>
@@ -228,7 +230,7 @@
       <p class="member-role">Groomsman</p>
   </div>
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman5">
   <figure class="image is-128x128">
   <img src="images/kenny-1.png">
   </figure>
@@ -237,7 +239,7 @@
       <p class="member-role">Groomsman</p>
   </div>  
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman6">
   <figure class="image is-128x128">
   <img src="images/john-1.png">
   </figure>
@@ -246,7 +248,7 @@
       <p class="member-role">Groomsman</p>
   </div> 
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman7">
   <figure class="image is-128x128">
   <img src="images/yi-1.png">
   </figure>
@@ -255,7 +257,7 @@
       <p class="member-role">Groomsman</p>
   </div>  
   </div>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" id="groomsman8">
   <figure class="image is-128x128">
   <img src="images/klint-1.png">
   </figure>

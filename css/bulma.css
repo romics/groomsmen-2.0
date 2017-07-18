@@ -7199,6 +7199,12 @@ label.panel-block:hover {
   text-align: center;
 }
 
+#team .pre {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
 #team .image img {
   border-radius: 50%;
 }
