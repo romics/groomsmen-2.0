@@ -18,27 +18,51 @@
         $(function(){
 
           // Groomsman Class
-          class Groomsman{
-            constructor(fname, lname){
-              addEmail(new_email){
-                this.email = new_email;
-                return this;
-              }
+          var Groomsman = function(fname, lname) {
+            this.firstName = fname;
+            this.lastName = lname;
+
+            this.addEmail = function(new_email){
+              this.email = new_email;
             }
-          }
+
+            this.getFirstName = function(){
+              return this.firstName;
+            }
+
+            this.getLastName = function(){
+              return this.lastName;
+            }
+
+            this.getEmail = function(){
+              return this.email;
+            }
+            
+          };
 
           // groomsmen
-          var groomsman1 = {firstName:"Quinton", lastName:"Ivey", email:"quinton4@vt.edu"};
-          var groomsman2 = {firstName:"Romcholo", lastName:"Macatula",email:"romcholo@vt.edu"};
-          var groomsman3 = {firstName:"Jordan", lastName:"Riley",email:"jcr1593@vt.edu"};
-          var groomsman4 = {firstName:"Justin", lastName:"Ryals",email:"jryals22@vt.edu"};
-          var groomsman5 = {firstName:"Kenny", lastName:"Wimmer", email:"kennywimmer@gmail.com"};
-          var groomsman6 = {firstName:"John", lastName:"Robertson", email:"robertson.john.t@gmail.com "};
-          var groomsman7 = {firstName:"Yi", lastName:"Gao", email:"tenebrusethan@gmail.com"};
-          var groomsman8 = {firstName:"Klint", lastName:"Ciriaco", email:"cklint12@vt.edu"};
+          var groomsman1 = new Groomsman("Quinton", "Ivey");
+          groomsman1.addEmail("quinton4@vt.edu");
+          var groomsman2 = new Groomsman("Romcholo", "Macatula");
+          groomsman2.addEmail("romcholo@vt.edu");
+          var groomsman3 = new Groomsman("Jordan", "Riley");
+          groomsman3.addEmail("jcr1593@vt.edu");
+          var groomsman4 = new Groomsman("Justin", "Ryals");
+          groomsman4.addEmail("jryals22@vt.edu");
+          var groomsman5 = new Groomsman("Kenny", "Wimmer");
+          groomsman5.addEmail("kennywimmer@gmail.com");
+          var groomsman6 = new Groomsman("John", "Robertson");
+          groomsman6.addEmail("robertson.john.t@gmail.com");
+          var groomsman7 = new Groomsman("Yi", "Gao");
+          groomsman7.addEmail("tenebrusethan@gmail.com");
+          var groomsman8 = new Groomsman("Klint", "Ciriaco");
+          groomsman8.addEmail("cklint12@vt.edu");
+          
 
           // Keys
-          var keys = [groomsman1.email, groomsman2.email, groomsman3.email, groomsman4.email, groomsman5.email, groomsman6.email, groomsman6.email, groomsman7.email, groomsman8.email];
+          var keys = [groomsman1.getEmail(), groomsman2.getEmail(), groomsman3.getEmail(), groomsman4.getEmail(), groomsman5.getEmail(), groomsman6.getEmail(), groomsman6.getEmail(), groomsman7.getEmail(), groomsman8.getEmail()];
+
+          var groomsmanList = [groomsman1, groomsman2, groomsman3, groomsman4, groomsman5, groomsman6, groomsman7, groomsman8];
 
           // Modal Functionality
           var modal = document.querySelector("#key");
@@ -77,7 +101,8 @@
             }
             else
             {
-              var id = keys.indexOf(input.email)+1;
+              var i = keys.indexOf(input.email);
+              var id = i+1;
               console.log("It's a match!!!");
               modal.classList.toggle("modal-open");
               modalOverlay.classList.toggle("modal-overlay-open");
@@ -85,8 +110,9 @@
               var gman = "groomsman"+id;
               console.log(gman);
               $("#"+gman).find("img").attr("src", "images/placeholder-256x256.png");
-              console.log(("groomsman"+id).firstName);
-              $("#groomsman"+id).find("member-name").html(gman.firstName);
+              console.log(groomsman1.getFirstName());
+              console.log(groomsmanList[i].getFirstName());
+              $("#groomsman"+id).find("member-name").html("Hello");
             }
           });
 
