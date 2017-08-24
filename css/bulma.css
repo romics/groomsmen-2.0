@@ -7174,9 +7174,15 @@ label.panel-block:hover {
   min-height: 500px;
   height: 100%;
   background-size: cover;
+  background-position: center center; 
 }
 
-
+@media screen and (max-width: 768px){
+  #slider {
+    width:100%;
+    min-height: 250px;
+  }
+}
 
 #about, #details {
   background-color: #F0F0F0;
