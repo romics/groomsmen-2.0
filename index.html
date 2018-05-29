@@ -12,66 +12,72 @@
      <title>#macatruelove</title>
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <link rel="stylesheet" href="css/bulma.css" />
+     <link rel="stylesheet" href="css/bulma-custom.css" />
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 
      <script type="text/javascript">
+
+      document.addEventListener('DOMContentLoaded', function () {
+
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
      </script>
 </head>
 
 <body>
 <div class="container">
 <!--      N A V I G A T I O N     -->
-<nav class="nav">
-  <div class="nav-left">
-    <a class="nav-item">
-      #macatruelove
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      macatruelove
     </a>
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
   </div>
 
-  <div style="display:none;">
-  <div class="nav-center">
-    <a class="nav-item">
-      <span class="icon">
-        <i class="fa fa-user-circle-o"></i>
-      </span>
-    </a>
-    <a class="nav-item">
-      <span class="icon">
-        <i class="fa fa-group"></i>
-      </span>
-    </a>
-    <a class="nav-item">
-      <span class="icon">
-        <i class="fa fa-thumb-tack"></i>
-      </span>
-    </a>
-  </div>
-  </div>
 
-  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle">
-    <span><a class="nav-item" href="#about">About</a></span>
-    <span><a class="nav-item" href="#team">Squad</a></span>
-    <span><a class="nav-item" href="#details">Details</a></span>
-  </span>
 
-  <!-- This "nav-menu" is hidden on mobile -->
+  <!-- This "navbar-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
-  <div class="nav-right nav-menu">
-    <a class="nav-item" href="#about">
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-end">
+    <a class="navbar-item" href="#about">
       About
     </a>
-    <a class="nav-item" href="#team">
+    <a class="navbar-item" href="#team">
       Squad
     </a>
-    <a class="nav-item" href="#details">
+    <a class="navbar-item" href="#details">
       Details
     </a>
+    </div>
   </div>
 </nav>
 </div>
@@ -88,7 +94,7 @@
 <!--      A B O U T     -->
 <section class="section" id="about">
 <div class="container content">
-<h1 class="title is-1">About</h1>
+<h1 class="subtitle is-1">About</h1>
 <p>Hello! You are here because you have been requested to be one of Romico's groomsman for this wedding. You are an important person in Romico's life and he desires to move onto his next season in life with you by his side.&nbsp;</p>
 <p>If none of that applies to you, you're probably not supposed to be on this website! haha.<br /><br />Before you accept, I want to let you know what you are committing to for the wedding weekend:</p>
 <ul>
@@ -105,7 +111,7 @@
 <!--      S Q U A D     -->
 <section class="section" id="team">
 <div class="container">
-<h1 class="title is-1">Squad</h1>
+<h1 class="subtitle is-1">Squad</h1>
 <div class="columns is-multiline">
   <div class="column is-one-quarter" id="groomsman1">
   <figure class="image is-128x128">
@@ -186,7 +192,7 @@
 <!--      D E T A I L S     -->
 <section class="section" id="details">
 <div class="container content">
-<h1 class="title is-1">Wedding</h1>
+<h1 class="subtitle is-1">Wedding</h1>
 <p>Date: Sunday, September 10, 2017</p>
 <p>Time: 10:30AM</p>
 <p>Attire:</p> 
